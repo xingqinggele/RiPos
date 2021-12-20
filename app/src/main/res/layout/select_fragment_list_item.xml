@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/constraintLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <CheckBox
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/checkBox_item"
+        android:background="@drawable/checkbox_selector"
+        android:clickable="false"
+        android:button="@null"
+        android:focusable="false"
+        />
+
+    <TextView
+        android:id="@+id/cooser_item_tv"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox_item"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_item"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="序列号:"
+        android:textColor="#ff363636"
+        android:textSize="14sp"
+        />
+
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/cooser_item_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/cooser_item_tv"
+        app:layout_constraintTop_toTopOf="@+id/cooser_item_tv"
+        android:id="@+id/cooser_item_tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#ff2d2d2d"
+        android:textSize="15sp"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,66 @@
+package com.example.ripos.app;
+
+import android.app.Application;
+import android.content.Context;
+import android.util.Log;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
+
+/**
+ * 作者: qgl
+ * 创建日期：2020/10/19
+ * 描述:appliction
+ */
+public class MyApp extends Application {
+    public static Context context;
+    private static MyApp allApp;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        Fresco.initialize(this);
+        allApp = this;
+        /**
+         * 注意：如果您已经在AndroidManifest.xml中配置过appkey和channel值，可以调用此版本初始化函数。
+         */
+        UMConfigure.init(this, "60bc6acd799cce47f9363e75", "ri1", UMConfigure.DEVICE_TYPE_PHONE, "ri2");
+        UMConfigure.setLogEnabled(true);
+        UMConfigure.setEncryptEnabled(true);
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        /////TODO 穿裙子镇不住了。。。。
+        Log.e("System:", " 快快请佛祖！！！");
+        System.err.println("////////////////////////////////////////////////////////////////////\n" +
+                "//                          _ooOoo_                               //\n" +
+                "//                         o8888888o                              //\n" +
+                "//                         88\" . \"88                              //\n" +
+                "//                         (| ^_^ |)                              //\n" +
+                "//                         O\\  =  /O                              //\n" +
+                "//                      ____/`---'\\____                           //\n" +
+                "//                    .'  \\\\|     |//  `.                         //\n" +
+                "//                   /  \\\\|||  :  |||//  \\                        //\n" +
+                "//                  /  _||||| -:- |||||-  \\                       //\n" +
+                "//                  |   | \\\\\\  -  /// |   |                       //\n" +
+                "//                  | \\_|  ''\\---/''  |   |                       //\n" +
+                "//                  \\  .-\\__  `-`  ___/-. /                       //\n" +
+                "//                ___`. .'  /--.--\\  `. . ___                     //\n" +
+                "//              .\"\" '<  `.___\\_<|>_/___.'  >'\"\".                  //\n" +
+                "//            | | :  `- \\`.;`\\ _ /`;.`/ - ` : | |                 //\n" +
+                "//            \\  \\ `-.   \\_ __\\ /__ _/   .-` /  /                 //\n" +
+                "//      ========`-.____`-.___\\_____/___.-`____.-'========         //\n" +
+                "//                           `=---='                              //\n" +
+                "//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //\n" +
+                "//            佛祖保佑       永不宕机     永无BUG                 //\n" +
+                "////////////////////////////////////////////////////////////////////");
+    }
+
+    /**
+     * 获得上下文的全局对象
+     *
+     * @return 全局app
+     */
+    public static MyApp getApp() {
+        return allApp;
+    }
+}
